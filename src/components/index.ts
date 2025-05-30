@@ -1,2 +1,5 @@
 export {TopBar} from './ui/TopBar'
+export {DefaultActions} from './home/DefaultActions'
+export {CreatePageActions} from './home/CreatePageActions'
+export {NamePage} from './home/NamePage'
 export {Title} from './home/Title'
