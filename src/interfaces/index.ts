@@ -1,0 +1,1 @@
+export type {CardLink} from './home/CardLink.interface'
