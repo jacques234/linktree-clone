@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { BiCheck } from "react-icons/bi";
+import { BiCheck, BiChevronDown } from "react-icons/bi";
 import {
   FaInstagram,
   FaTwitter,
@@ -51,13 +51,13 @@ export const DropdownSocial = ({ selectOption,onSelect }: PropsDropDown) => {
     <div className="relative w-56">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-4 py-2 border-[1px] border-gray-400 rounded bg-white"
+        className="flex w-full justify-between items-center  bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
       >
         <div className="flex items-center gap-2">
           {selected.icon}
           {selected.label}
         </div>
-        <span>▾</span>
+        <BiChevronDown className="w-4 h-4" />
       </button>
 
       {open && (

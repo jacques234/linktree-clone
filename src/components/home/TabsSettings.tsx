@@ -4,6 +4,8 @@ import { CiLink } from "react-icons/ci";
 import { ButtonIcon } from "../ui/ButtonIcon";
 import { ProfileInformation } from "./ProfileInformation";
 import { usePageStore } from "@/store/store";
+import { LinksInformation } from "./LinksInformation";
+import { Appearance } from "./Appearance";
 
 const tabOptions = [
   {
@@ -24,7 +26,7 @@ const tabOptions = [
 ];
 
 export const TabsSettings = () => {
-  const {activeTab,setActiveTab} = usePageStore();
+  const { activeTab, setActiveTab } = usePageStore();
   const handleOnClick = (id: number) => {
     setActiveTab(id);
   };
@@ -32,11 +34,11 @@ export const TabsSettings = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case 1:
-        return <ProfileInformation />;
+        return <ProfileInformation />
       case 2:
-        return <div>Links</div>;
+        return <LinksInformation />
       case 3:
-        return <div>Appearance</div>;
+        return <Appearance/>
       default:
         return null;
     }

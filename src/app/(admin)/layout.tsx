@@ -11,7 +11,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full h-full bg-[#f9fafb]">
+    <div className="w-full h-screen bg-[#f9fafb]">
       <TopBar />
       {children}
     </div>

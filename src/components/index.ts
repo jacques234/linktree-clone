@@ -10,4 +10,8 @@ export { InputCustom } from "./ui/InputCustom";
 export { TextAreaCustom } from "./ui/TextAreaCustom";
 export { SocialMedia } from "./home/SocialMedia";
 export { DropdownSocial } from "./ui/Dropdownsocial";
-export {} from './home/ItemSocialMedia'
+export {ItemSocialMedia} from './home/ItemSocialMedia'
+export {LinksInformation} from './home/LinksInformation'
+export {Links} from './home/Links'
+export { DropdownColor} from './ui/DropdownColor'
+export {Appearance} from './home/Appearance'

@@ -1,19 +1,45 @@
 "use client";
 import { PiPlus } from "react-icons/pi";
 import { ItemSocialMedia } from "./ItemSocialMedia";
-import { useState } from "react";
 import { usePageStore } from "@/store/store";
+import { SocialMediaLinks } from "@/interfaces/home/SocialMediaLinks.interface";
 
 export const SocialMedia = () => {
-  const {socialMediaLinks,setSocialMediaLinks} = usePageStore();
-  const [socialItems, setSocialItems] = useState<number[]>([Date.now()]);
+  const { socialMediaLinks, setSocialMediaLinks, setSocialMediaLinksArray } = usePageStore();
   const handleAddSocial = () => {
-    const newId = Date.now() + Math.random();
-    setSocialItems((prev) => [...prev, newId]);
+    //hacer copia del original evitar mutar original
+    const socialSort = [...socialMediaLinks].sort((a, b) => a.id - b.id);
+
+    const ultimoRegistro = socialSort[socialSort.length - 1];
+    const newId = ultimoRegistro ? ultimoRegistro.id + 1 : 1;
+
+    const newRegistro: SocialMediaLinks = {
+      id: newId,
+      idSocial: 1,
+      socialMedia: 'instagram',
+      url: 'https://instagram.com'
+    }
+    setSocialMediaLinks(newRegistro)
   };
-  const handleDeleteSocial = (id: number) => {
-    const newItems = socialItems.filter((i) => i !== id);
-    setSocialItems(newItems);
+  const handleSocialChange = (itemId: number, newSocialId: number, newSocialLabel: string) => {
+    const updatedLinks = socialMediaLinks.map((item) =>
+      item.id === itemId
+        ? { ...item, idSocial: newSocialId, socialMedia: newSocialLabel }
+        : item
+    );
+    setSocialMediaLinksArray(updatedLinks);
+  };
+
+  const handleUrlChange = (itemId: number, newUrl: string) => {
+    const updatedLinks = socialMediaLinks.map((item) =>
+      item.id === itemId ? { ...item, url: newUrl } : item
+    );
+    setSocialMediaLinksArray(updatedLinks);
+  };
+
+  const handleDeleteSocial = (itemId: number) => {
+    const updatedLinks = socialMediaLinks.filter((item) => item.id !== itemId);
+    setSocialMediaLinksArray(updatedLinks);
   };
   return (
     <>
@@ -27,22 +53,17 @@ export const SocialMedia = () => {
           Add Social
         </button>
       </div>
-      {
-        socialMediaLinks.map((option) => (
-          <ItemSocialMedia
-            key={option.socialMedia}
-            onClick={() => console.log()}
-            onSelect={(val) => alert(val)} optionSelected={option.id} 
-            value={option.url}       />
-        ))
-      }
-      {/* {socialItems.map((itemId) => (
+      {socialMediaLinks.map((option) => (
         <ItemSocialMedia
-          key={itemId}
-          onClick={() => handleDeleteSocial(itemId)}
-          onSelect={(val) => alert(val)}
+          key={option.id}
+          optionSelected={option.idSocial}
+          value={option.url}
+          onSelect={(val) => handleSocialChange(option.id, val.id, val.socialMedia)}
+          onInput={(val) => handleUrlChange(option.id, val)}
+          onClick={() => handleDeleteSocial(option.id)}
         />
-      ))} */}
+      ))}
+
     </>
   );
 };
