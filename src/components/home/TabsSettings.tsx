@@ -5,7 +5,7 @@ import { ButtonIcon } from "../ui/ButtonIcon";
 import { ProfileInformation } from "./ProfileInformation";
 import { usePageStore } from "@/store/store";
 import { LinksInformation } from "./LinksInformation";
-import { Appearance } from "./Appearance";
+import { Appearance } from "./Appeareance/Appearance";
 
 const tabOptions = [
   {

@@ -46,7 +46,7 @@ export const SocialMedia = () => {
       <div className="flex items-center justify-between font-bold mb-3">
         <h1 className="font-bold text-2xl">Social Media Links</h1>
         <button
-          className="flex items-center gap-5 px-2 py-2 border-[1px] border-gray-400 rounded cursor-pointer hover:bg-[#f4f4f5]"
+          className="flex items-center gap-5 px-2 py-2 text-[8px] sm:text-[8px] xl:text-[15px] border-[1px] border-gray-400 rounded cursor-pointer hover:bg-[#f4f4f5]"
           onClick={handleAddSocial}
         >
           <PiPlus size={20} />

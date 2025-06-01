@@ -11,6 +11,8 @@ interface PageState {
   profileData: ProfileInformation;
   socialMediaLinks: SocialMediaLinks[];
   infoLinks: InfoLinks[];
+  colorAppearance: number;
+  buttonStyleAppareance: number;
   linksData: Record<string, any>;
   appearanceData: Record<string, any>;
   setPageName: (name: string) => void;
@@ -19,6 +21,8 @@ interface PageState {
   setSocialMediaLinks: (data: SocialMediaLinks) => void;
   setSocialMediaLinksArray: (data: SocialMediaLinks[]) => void;
   setInfoLink: (data: InfoLinks) => void;
+  setColorAppeareance: (data: number) => void;
+  setButtonStyleAppeareance: (data: number) => void;
   setInfoLinksArray: (data: InfoLinks[]) => void;
   setLinksData: (data: Record<string, any>) => void;
   setAppearanceData: (data: Record<string, any>) => void;
@@ -44,6 +48,8 @@ export const usePageStore = create<PageState>((set) => ({
     linkTitle: '',
     url: ''
   }],
+  colorAppearance: 1,
+  buttonStyleAppareance: 1,
   linksData: {},
   appearanceData: {},
   setPageName: (name) => set({ pageName: name }),
@@ -65,6 +71,8 @@ export const usePageStore = create<PageState>((set) => ({
     set(() => ({
       infoLinks: data
     })),
+  setColorAppeareance: (value) => set({ colorAppearance: value }),
+  setButtonStyleAppeareance: (value) => set({ buttonStyleAppareance: value }),
   setLinksData: (data) => set({ linksData: data }),
   setAppearanceData: (data) => set({ appearanceData: data }),
 }));
