@@ -9,3 +9,15 @@ pnpm add clsx
 ```bash
 pnpm add zustand
 ```
+
+## Instalacion prisma con Postgres
+```bash
+pnpm add prisma tsx --save-dev
+pnpm add @prisma/extension-accelerate @prisma/client
+```
+
+## Inicializar prisma
+```bash
+npx prisma init
+
+```

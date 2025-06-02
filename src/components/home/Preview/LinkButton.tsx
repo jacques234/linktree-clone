@@ -1,22 +1,24 @@
-import { InfoLinks } from "@/interfaces";
-import { colorOptions, styles } from "@/seed";
+import { ColorOptions, InfoLinks, StyleButton } from "@/interfaces";
 import { isValidOrRelativeUrl } from "@/utils";
 import Link from "next/link";
 
 interface PropsLinkButton {
   link: InfoLinks;
   styleAppearance: number;
+  colorsButtons: ColorOptions[];
+  styles: StyleButton[];
 }
-
-export const LinkButton = ({ link, styleAppearance }: PropsLinkButton) => {
-  const color = colorOptions.find((x) => x.label === link.idColor)?.color;
+export const LinkButton = ({
+  link,
+  styleAppearance,
+  colorsButtons,
+  styles,
+}: PropsLinkButton) => {
+  const color = colorsButtons.find((x) => x.label === link.idColor)?.color;
   const appearanceButton = styles.find(
     (x) => x.id === styleAppearance
   )?.rounded;
-  const url =
-    link.url && isValidOrRelativeUrl(link.url)
-      ? link.url
-      : "/404";
+  const url = link.url && isValidOrRelativeUrl(link.url) ? link.url : "/404";
 
   return (
     <Link

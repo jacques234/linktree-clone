@@ -1,3 +1,4 @@
+'use client'
 import clsx from "clsx";
 import { BiCheck } from "react-icons/bi";
 
