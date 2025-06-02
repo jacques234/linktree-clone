@@ -16,8 +16,8 @@ export const LinksInformation = () => {
         const newRegistro: InfoLinks = {
             id: newId,
             idColor: 'Blue',
-            linkTitle: '',
-            url: ''
+            linkTitle: 'New Link',
+            url: 'http://example.com'
         }
         setInfoLink(newRegistro)
     };

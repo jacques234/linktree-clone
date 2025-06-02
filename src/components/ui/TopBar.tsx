@@ -13,7 +13,7 @@ export const TopBar = () => {
     RigthContent = <DefaultActions />;
   }
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center py-4 px-28 border-b-[1px] border-gray-400 bg-white">
+    <div className="flex flex-col xl:flex-row justify-between items-center py-2 px-2 xl:py-4 xlpx-28 border-b-[1px] border-gray-400 bg-white">
         {RigthContent}
     </div>
   );

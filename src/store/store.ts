@@ -32,9 +32,9 @@ export const usePageStore = create<PageState>((set) => ({
   pageName: '',
   activeTab: 1,
   profileData: {
-    userName: '',
+    userName: '@username',
     avatar: '',
-    bio: ''
+    bio: 'Describe yourself in a few words'
   },
   socialMediaLinks: [{
     id: 1,
@@ -45,8 +45,8 @@ export const usePageStore = create<PageState>((set) => ({
   infoLinks: [{
     id: 1,
     idColor: 'Blue',
-    linkTitle: '',
-    url: ''
+    linkTitle: 'New Link',
+    url: 'http://example.com'
   }],
   colorAppearance: 1,
   buttonStyleAppareance: 1,
