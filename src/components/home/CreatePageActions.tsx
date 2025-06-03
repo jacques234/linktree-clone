@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import { BiArrowBack, BiSave } from 'react-icons/bi'
+import { BiArrowBack } from 'react-icons/bi'
 import { BsEye } from 'react-icons/bs'
+import { SaveButton } from './Create/SaveButton'
 
 export const CreatePageActions = () => {
     return (
@@ -19,10 +20,7 @@ export const CreatePageActions = () => {
                     <BsEye size={20} />
                     Preview
                 </Link>
-                <Link href={''} className='flex items-center gap-5 px-6 py-2 bg-black text-white rounded'>
-                    <BiSave size={20} />
-                    Save
-                </Link>
+               <SaveButton/>
             </div>
         </>
     )
