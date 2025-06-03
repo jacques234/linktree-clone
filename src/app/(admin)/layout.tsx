@@ -1,4 +1,6 @@
 import { TopBar } from "@/components";
+import { AuthOptions } from "@/components/ui/authOptions";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "Home",
@@ -11,9 +13,14 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full h-full bg-[#f9fafb]">
-      <TopBar />
-      {children}
-    </div>
+    <SessionProvider>
+      <div className="w-full h-screen bg-[#f9fafb] flex flex-col">
+        <TopBar />
+
+        <div className="flex-1">{children}</div>
+
+       <AuthOptions/>
+      </div>
+    </SessionProvider>
   );
 }

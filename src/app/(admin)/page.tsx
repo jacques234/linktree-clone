@@ -1,6 +1,8 @@
+import { auth } from "@/auth";
 import { Title } from "@/components";
 import { CardLinks } from "@/components/home/CardLinks";
 import { CardLink } from "@/interfaces";
+import { redirect } from "next/navigation";
 
 const cards: CardLink[] = [
   {
@@ -21,7 +23,11 @@ const cards: CardLink[] = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const session = await auth();
+  if (!session) {
+    redirect("/api/auth/signin");
+  }
   return (
     <div className="py-7 px-28">
       <Title
