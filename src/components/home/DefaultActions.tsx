@@ -4,6 +4,7 @@ import React from "react";
 import { BsPlus } from "react-icons/bs";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { ItemUser } from "../ui/Topbar/ItemUser";
 export const DefaultActions = () => {
   const { data: session } = useSession();
   return (
@@ -20,13 +21,7 @@ export const DefaultActions = () => {
           Create New Page
         </Link>
         {session?.user?.image ? (
-          <Image
-            src={session.user.image}
-            alt="Logo user"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
+         <ItemUser image={session.user.image}/>
         ) : null}
       </div>
     </>
