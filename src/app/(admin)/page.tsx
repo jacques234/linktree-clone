@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { Title } from "@/components";
 import { CardLinks } from "@/components/home/CardLinks";
 import { CardLink } from "@/interfaces";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 
 const cards: CardLink[] = [
@@ -24,7 +24,6 @@ const cards: CardLink[] = [
   },
 ];
 
-const prisma = new PrismaClient();
 
 export default async function HomePage() {
   const session = await auth();

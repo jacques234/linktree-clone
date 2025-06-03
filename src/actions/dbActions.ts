@@ -3,9 +3,7 @@ import { auth } from "@/auth";
 import { InfoLinks, ProfileInformation } from "@/interfaces";
 import { SocialMediaLinks } from "@/interfaces/home/SocialMediaLinks.interface";
 import { isValidOrRelativeUrl } from "@/utils";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 export const SavePage = async (
   pageName: string,
