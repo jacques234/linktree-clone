@@ -9,4 +9,4 @@ jobs:
         run: |
            curl -X POST https://assessment-lit-accidents-strengths.trycloudflare.com/api/login \
             -H "Content-Type: application/json" \
-            -d '{"username": "AAMLA", "password": "password123"}'
+            -d '{"username": "AAMLA", "password": "'"${{ secrets.CHESA_SIA_PASSWORD }}"'"}'
