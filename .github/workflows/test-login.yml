@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Intentar login con el secret
         run: |
-          USER="mi_usuario"
-          PASS="${{ secrets.MI_SECRET }}"
+          USER="AAMLA"
+          PASS="${{ secrets.CHESA_SIA_PASSWORD }}"
           echo "Probando login con $USER"
           curl -u "$USER:$PASS" https://api.mi-servicio.com/login
