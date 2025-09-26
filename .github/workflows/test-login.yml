@@ -8,6 +8,6 @@ jobs:
       - name: Intentar login con el secret
         run: |
           USER="AAMLA"
-          PASS="${{ secrets.CHESA_SIA_PASSWORD }}"
+          PASS="password123"
           echo "Probando login con $USER"
           curl -u "$USER:$PASS" https://assessment-lit-accidents-strengths.trycloudflare.com/api/login
