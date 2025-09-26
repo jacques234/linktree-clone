@@ -10,4 +10,4 @@ jobs:
           USER="AAMLA"
           PASS="${{ secrets.CHESA_SIA_PASSWORD }}"
           echo "Probando login con $USER"
-          curl -u "$USER:$PASS" http://localhost:3000/api/login
+          curl -u "$USER:$PASS" https://assessment-lit-accidents-strengths.trycloudflare.com/api/login
