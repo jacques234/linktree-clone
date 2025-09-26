@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Intentar login con el secret
         run: |
-          USER="AAMLA"
-          PASS="password123"
+          username="AAMLA"
+          password="password123"
           echo "Probando login con $USER"
           curl -u "$USER:$PASS" https://assessment-lit-accidents-strengths.trycloudflare.com/api/login
